@@ -1,4 +1,6 @@
 package com.pibigstar.blockchain;
+import com.pibigstar.blockchain.util.StringUtil;
+
 import java.security.*;
 import java.util.ArrayList;
 /**

@@ -3,6 +3,8 @@ import java.security.Security;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.pibigstar.blockchain.bean.Block;
+import com.pibigstar.blockchain.util.StringUtil;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 /**
@@ -25,10 +27,10 @@ public class BlockChain {
 
 	public static void main(String[] args) {	
 		//创建区块链
-		//createChain();
+		createChain();
 
 		//交易测试
-		transaction();
+//		transaction();
 
 	}
 
@@ -192,7 +194,7 @@ public class BlockChain {
 	}
 	/**
 	 * 增加一个新的区块
-	 * 并将改去放放到区块链中
+	 * 并将该区块放到区块链中
 	 * @param newBlock
 	 */
 	public static void addBlock(Block newBlock) {
