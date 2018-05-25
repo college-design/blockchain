@@ -27,10 +27,10 @@ public class BlockChain {
 
 	public static void main(String[] args) {	
 		//创建区块链
-		createChain();
+//		createChain();
 
 		//交易测试
-//		transaction();
+		transaction();
 
 	}
 
@@ -56,7 +56,6 @@ public class BlockChain {
 		genesisTransaction.outputs.add(new TransactionOutput(genesisTransaction.reciepient, genesisTransaction.value, genesisTransaction.transactionId)); 
 		//在UTXOs列表中存储第一个事务，非常重要！
 		UTXOs.put(genesisTransaction.outputs.get(0).id, genesisTransaction.outputs.get(0)); 
-
 		System.out.println("#info:创造和开采创世纪块...... ");
 		Block genesis = new Block("0");//创世区块
 		genesis.addTransaction(genesisTransaction);//把事务放到区块里
@@ -83,9 +82,11 @@ public class BlockChain {
 		block3.addTransaction(walletB.sendFunds( walletA.publicKey, 20));
 		System.out.println("钱包A的 金钱为:  " + walletA.getBalance());
 		System.out.println("钱包B的 金钱为:  " + walletB.getBalance());
-
+		addBlock(block3);
 		//验证合法性
 		isChainValid();
+		String blockchainJson = StringUtil.getJson(blockchain);
+		System.out.println(blockchainJson);
 	}
 
 
